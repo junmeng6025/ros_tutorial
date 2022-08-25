@@ -1,0 +1,1 @@
+/home/jun/ros_tutorial/catkin_ws/devel/.private/robot_motion_ctrl/share/robot_motion_ctrl/cmake/robot_motion_ctrlConfig-version.cmake

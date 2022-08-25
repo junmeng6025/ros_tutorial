@@ -1,0 +1,3 @@
+Symlinking /home/jun/ros_tutorial/catkin_ws/devel/share/robot_motion_ctrl/cmake/robot_motion_ctrlConfig-version.cmake
+Symlinking /home/jun/ros_tutorial/catkin_ws/devel/share/robot_motion_ctrl/cmake/robot_motion_ctrlConfig.cmake
+Symlinking /home/jun/ros_tutorial/catkin_ws/devel/lib/pkgconfig/robot_motion_ctrl.pc

@@ -1,0 +1,8 @@
+prefix=/home/jun/ros_tutorial/catkin_ws/devel/.private/robot_motion_ctrl
+
+Name: robot_motion_ctrl
+Description: Description of robot_motion_ctrl
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

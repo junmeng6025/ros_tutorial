@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/jun/ros_tutorial/catkin_ws/devel/.private/robot_motion_ctrl/setup.sh

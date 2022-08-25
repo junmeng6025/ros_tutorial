@@ -1,0 +1,1 @@
+/home/jun/ros_tutorial/catkin_ws/devel/.private/catkin_tools_prebuild/setup.zsh
