@@ -21,6 +21,6 @@ cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communi
   
 ## 4) Write a node that contains both publisher and subscriber  
 
-## 5) ROS service  
+## 5) About ROS service  
   
 ## 6) Write a node that calls ROS service  
