@@ -11,7 +11,7 @@ cd to `catkin_ws/src/` and run `$ catkin_create_pkg robot_motion_ctrl rospy turt
 Each ROS packages can be seen as a sub-APP of the whole APP, which covers certain functionalities.  
   
 #### 0.3 Build the ROS project
-cd back to `catkin_ws`, run `$ catkin_build` to generalize files for ROS communications.  
+cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communications.  
   
 ## 1) Write your first node  
   
