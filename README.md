@@ -3,7 +3,7 @@ Followed the videos on the YouTube channel [ROS Tutorials - ROS Noetic For Begin
   
 ## Install ROS Noetic  
 Follow the [Ubuntu install of ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) on the ROS wiki if you are using Ubuntu. For other OS you can also find the corresponding installation guide on ROS wiki.  
-Tips: there is also a convienent way that can install ROS with a [one-line command](http://wiki.ros.org/ROS/Installation/TwoLineInstall/)  
+Tips: there is also a convienent way that can install ROS with a [one-line command](http://wiki.ros.org/ROS/Installation/TwoLineInstall/).  
   
 ## 0) Create a workspace and initialize everything  
 #### 0.1 Create folders
