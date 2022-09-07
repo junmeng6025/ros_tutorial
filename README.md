@@ -5,12 +5,15 @@ Our package is named as `robot_motion_ctrl`.
 # Run the demo  
 ## *0) Before anything*  
 source the `/devel/setup.bash`  
-run `$ roscore`  
+run ```bash
+$ roscore```  
 run a turtlrsim node to visualize the turtle `$ rosrun turtlesim turtlesim_node`  
   
 ## **1) Publisher:** make the turtle to draw a circle  
 1. run a turtlesim node:  
-`$ rosrun turtlesim turtlesim_node`  
+```bash
+$ rosrun turtlesim turtlesim_node
+```
 2. run a publisher to give the msg `/turtle1/cmd_vel` to the turtle:  
 `$ rosrun robot_motion_ctrl pub_draw_circle.py`  
   
@@ -28,8 +31,7 @@ or draw circle: `$ rosrun robot_motion_ctrl pub_draw_circle.py`
 1. run a turtlrsim node:  
 `$ rosrun turtlesim turtlesim_node`  
 2. run the ros node `$ rosrun robot_motion_ctrl turtle_ctrl.py`  
-  
-  
+    
   
   
 # Notes:  
@@ -61,3 +63,11 @@ cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communi
 ## 5) About ROS service  
   
 ## 6) Write a node that calls ROS service  
+  
+## 7) Some common-used ROS commands  
+### 7.1 Check the compute graph:  
+`$ rqt_graph`  
+### 7.2 Check the active topics:  
+`$ rostopic list`
+### 7.3 Check the properties of rosnode:  
+`$ 
