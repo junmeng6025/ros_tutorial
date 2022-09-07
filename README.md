@@ -18,7 +18,7 @@ run a turtlrsim node to visualize the turtle `$ rosrun turtlesim turtlesim_node`
 -1. run a turtlrsim node:  
 `$ rosrun turtlesim turtlesim_node`  
 -2. run the subscriber to get the msg `/turtle1/pose`:  
-`$ rosrun robot_motion_ctrl sub_pose.py`
+`$ rosrun robot_motion_ctrl sub_pose.py`  
 -3. make the turtle to move using either  
 keyboard cmd: `$ rosrun turtlesim turtle_teleop_key`  
 or draw circle: `$ rosrun robot_motion_ctrl pub_draw_circle.py`  
