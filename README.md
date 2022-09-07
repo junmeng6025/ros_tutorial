@@ -20,6 +20,10 @@ run a turtlrsim node to visualize the turtle
 ```bash
 $ rosrun turtlesim turtlesim_node
 ```  
+run a keyboard control node  
+```bash
+$ rosrun turtlesim turtle_teleop_key
+```  
   
 ## **1) Publisher:** make the turtle to draw a circle  
 1. run a turtlesim node:  
