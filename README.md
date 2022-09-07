@@ -1,5 +1,33 @@
 # ROS tutorial for beginers  
 Followed the videos on the YouTube channel [ROS Tutorials - ROS Noetic For Beginners](https://www.youtube.com/playlist?list=PLLSegLrePWgIbIrA4iehUQ-impvIXdd9Q)  
+Our package is named as `robot_motion_ctrl`.  
+  
+# Run the demo  
+## *Before anything*  
+source the `/devel/setup.bash`  
+run `$ roscore`  
+run a turtlrsim node to visualize the turtle `$ rosrun turtlesim turtlesim_node`  
+  
+## **Publisher:** make the turtle to draw a circle  
+-1. run a turtlesim node:  
+`$ rosrun turtlesim turtlesim_node`  
+-2. run a publisher to give the msg `/turtle1/cmd_vel` to the turtle:  
+`$ rosrun robot_motion_ctrl pub_draw_circle.py`  
+  
+## **Subscriber:** show the pose information of the turtle  
+-1. run a turtlrsim node:  
+`$ rosrun turtlesim turtlesim_node`  
+-2. run the subscriber to get the msg `/turtle1/pose`:  
+`$ rosrun robot_motion_ctrl sub_pose.py`
+-3. make the turtle to move using either  
+keyboard cmd: `$ rosrun turtlesim turtle_teleop_key`  
+or draw circle: `$ rosrun robot_motion_ctrl pub_draw_circle.py`  
+  
+## **Pub+Sub and Service:** make the turtle cruise within an area, change the pen color when crossing the middle.  
+-1. run a turtlrsim node:  
+`$ rosrun turtlesim turtlesim_node`  
+-2. run the ros node `$ rosrun robot_motion_ctrl turtle_ctrl.py`  
+  
   
 ## Install ROS Noetic  
 Follow the [Ubuntu install of ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) on the ROS wiki if you are using Ubuntu. For other OS you can also find the corresponding installation guide on ROS wiki.  
