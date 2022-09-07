@@ -23,7 +23,8 @@ run a turtlrsim node to visualize the turtle `$ rosrun turtlesim turtlesim_node`
 keyboard cmd: `$ rosrun turtlesim turtle_teleop_key`  
 or draw circle: `$ rosrun robot_motion_ctrl pub_draw_circle.py`  
   
-## **Pub+Sub and Service:** make the turtle cruise within an area, change the pen color when crossing the middle.  
+## **Pub+Sub and Service:**  
+**make the turtle cruise within an area, and change the pen color using ros service when crossing the middle.**  
 -1. run a turtlrsim node:  
 `$ rosrun turtlesim turtlesim_node`  
 -2. run the ros node `$ rosrun robot_motion_ctrl turtle_ctrl.py`  
