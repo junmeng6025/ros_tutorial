@@ -5,9 +5,14 @@ Our package is named as `robot_motion_ctrl`.
 # Run the demo  
 ## *0) Before anything*  
 source the `/devel/setup.bash`  
-run ```bash
-$ roscore```  
-run a turtlrsim node to visualize the turtle `$ rosrun turtlesim turtlesim_node`  
+launch the ros master 
+```bash
+$ roscore
+```  
+run a turtlrsim node to visualize the turtle 
+```bash
+$ rosrun turtlesim turtlesim_node
+```  
   
 ## **1) Publisher:** make the turtle to draw a circle  
 1. run a turtlesim node:  
@@ -15,22 +20,39 @@ run a turtlrsim node to visualize the turtle `$ rosrun turtlesim turtlesim_node`
 $ rosrun turtlesim turtlesim_node
 ```
 2. run a publisher to give the msg `/turtle1/cmd_vel` to the turtle:  
-`$ rosrun robot_motion_ctrl pub_draw_circle.py`  
+```bash
+$ rosrun robot_motion_ctrl pub_draw_circle.py
+```  
   
 ## **2) Subscriber:** show the pose information of the turtle  
 1. run a turtlrsim node:  
-`$ rosrun turtlesim turtlesim_node`  
+```bash
+$ rosrun turtlesim turtlesim_node
+```  
 2. run the subscriber to get the msg `/turtle1/pose`:  
-`$ rosrun robot_motion_ctrl sub_pose.py`  
+```bash
+$ rosrun robot_motion_ctrl sub_pose.py
+```  
 3. make the turtle to move using either  
-keyboard cmd: `$ rosrun turtlesim turtle_teleop_key`  
-or draw circle: `$ rosrun robot_motion_ctrl pub_draw_circle.py`  
+keyboard cmd: 
+```bash
+$ rosrun turtlesim turtle_teleop_key
+```  
+or draw circle: 
+```bash
+$ rosrun robot_motion_ctrl pub_draw_circle.py
+```  
   
 ## **3) Pub+Sub and Service:**  
 **make the turtle cruise within an area, and change the pen color using ros service when crossing the middle.**  
 1. run a turtlrsim node:  
-`$ rosrun turtlesim turtlesim_node`  
-2. run the ros node `$ rosrun robot_motion_ctrl turtle_ctrl.py`  
+```bash
+$ rosrun turtlesim turtlesim_node
+```  
+2. run the ros node 
+```bash
+$ rosrun robot_motion_ctrl turtle_ctrl.py
+```  
     
   
   
@@ -66,8 +88,15 @@ cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communi
   
 ## 7) Some common-used ROS commands  
 ### 7.1 Check the compute graph:  
-`$ rqt_graph`  
+```bash
+$ rqt_graph
+```  
 ### 7.2 Check the active topics:  
-`$ rostopic list`
+```bash
+$ rostopic list
+```
 ### 7.3 Check the properties of rosnode:  
-`$ 
+```bash
+$ rosnode info /turtlesim
+```  
+you will get information about what this node publishes and subscribes  
