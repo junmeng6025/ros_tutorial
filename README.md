@@ -126,9 +126,11 @@ $ rosbag record -a -O cmd_record
 the command stream would be saved as `cmd_record.bag`.  
   
 **play a rosbag:**  
+launch the ros-master and launch a turtlesim node, then:  
 ```bash
 $ rosbag play cmd_record.bag
-```
+```  
+the turtle will start to move from the current position according to what was recorded.  
   
 # Notes:  
   
