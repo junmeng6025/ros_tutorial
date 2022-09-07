@@ -4,7 +4,14 @@ Our package is named as `robot_motion_ctrl`.
   
 # Run the demo  
 ## *0) Before anything*  
-source the `/devel/setup.bash`  
+cd to the `catkin_ws`, source the `/devel/setup.bash`:
+```bash
+$ cd ros_tutorial/catkin_ws/
+```  
+```bash
+$ source devel/setup.bash
+```  
+
 launch the ros master 
 ```bash
 $ roscore
