@@ -54,6 +54,47 @@ $ rosrun robot_motion_ctrl turtle_ctrl.py
 ```  
     
   
+# Common-used ROS commands  
+### 7.1 Check the compute graph:  
+```bash
+$ rqt_graph
+```  
+### 7.2 Check the active topics:  
+```bash
+$ rostopic list
+```
+### 7.3 Check the properties of rosnode:  
+```bash
+$ rosnode info /turtlesim
+```  
+you will get information about what this node publishes and subscribes.  
+### 7.4 Publish message to a topic:  
+by default (hit the tab-key twice to fill automatically):    
+```bash
+$ rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0"
+```
+publish the message frequently (e.g at 10 Hz): add `-r 10` after `pub`  
+```bash
+$ rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 1.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0"
+```  
+### 7.5 Check the properties (i.e. the structure) of a ros message:  
+```bash
+$ rosmsg show geometry_msgs/Twist
+```  
   
 # Notes:  
   
@@ -85,40 +126,3 @@ cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communi
   
 ## 6) Write a node that calls ROS service  
   
-## 7) Some common-used ROS commands  
-### 7.1 Check the compute graph:  
-```bash
-$ rqt_graph
-```  
-### 7.2 Check the active topics:  
-```bash
-$ rostopic list
-```
-### 7.3 Check the properties of rosnode:  
-```bash
-$ rosnode info /turtlesim
-```  
-you will get information about what this node publishes and subscribes.  
-### 7.4 Publish message to a topic:  
-by default (hit the tab-key twice to fill automatically):    
-```bash
-$ rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
-  x: 0.0
-  y: 0.0
-  z: 0.0
-angular:
-  x: 0.0
-  y: 0.0
-  z: 0.0"
-```
-publish the message frequently (e.g at 10 Hz):  
-```bash
-$ rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist "linear:
-  x: 0.0
-  y: 0.0
-  z: 0.0
-angular:
-  x: 0.0
-  y: 0.0
-  z: 0.0"
-```
