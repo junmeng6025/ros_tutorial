@@ -38,7 +38,7 @@ keyboard cmd:
 ```bash
 $ rosrun turtlesim turtle_teleop_key
 ```  
-or draw circle: 
+  or draw circle: 
 ```bash
 $ rosrun robot_motion_ctrl pub_draw_circle.py
 ```  
