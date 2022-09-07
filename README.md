@@ -98,7 +98,15 @@ $ rosmsg show geometry_msgs/Twist
 ### -6 Check the active ros services:  
 ```bash
 $ rosservice list
-```
+```  
+### -7 Create a new turtle using rosservice:  
+```bash
+$ rosservice call /spawn "x: 2.0
+y: 2.0
+theta: 0.0
+name:'turtle2'"
+```  
+get a message in the terminal: `name: "turtle2"`, means that the new turtle is created successfully.  
   
 # Notes:  
   
