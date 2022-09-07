@@ -33,12 +33,11 @@ $ rosrun turtlesim turtlesim_node
 ```bash
 $ rosrun robot_motion_ctrl sub_pose.py
 ```  
-3. make the turtle to move using either  
-keyboard cmd: 
+3. make the turtle to move using either keyboard cmd: 
 ```bash
 $ rosrun turtlesim turtle_teleop_key
 ```  
-  or draw circle: 
+or draw a circle: 
 ```bash
 $ rosrun robot_motion_ctrl pub_draw_circle.py
 ```  
@@ -99,4 +98,27 @@ $ rostopic list
 ```bash
 $ rosnode info /turtlesim
 ```  
-you will get information about what this node publishes and subscribes  
+you will get information about what this node publishes and subscribes.  
+### 7.4 Publish message to a topic:  
+by default (hit the tab-key twice to fill automatically):    
+```bash
+$ rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0"
+```
+publish the message frequently (e.g at 10 Hz):  
+```bash
+$ rostopic pub -r 10 /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0"
+```
