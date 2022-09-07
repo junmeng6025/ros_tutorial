@@ -49,7 +49,7 @@ $ rosrun robot_motion_ctrl pub_draw_circle.py
 ```bash
 $ rosrun turtlesim turtlesim_node
 ```  
-2. run the ros node 
+2. run the ros node, which publishes velocity command to the turtle, and subscribes pose information from the turtle. In the meanwhile change the pen color using ros service according to the turtle's current pose.  
 ```bash
 $ rosrun robot_motion_ctrl turtle_ctrl.py
 ```  
