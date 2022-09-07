@@ -118,6 +118,15 @@ theta: 0.0
 name:'turtle2'"
 ```  
 get a message in the terminal: `name: "turtle2"`, means that the new turtle is created successfully.  
+### -8 Record and play a rosbag  
+record:  
+```bash
+$ rosbag record -a-O cmd_record
+```
+play:  
+```bash
+$ rosbag play cmd_record.bag
+```
   
 # Notes:  
   
