@@ -30,7 +30,9 @@ or draw circle: `$ rosrun robot_motion_ctrl pub_draw_circle.py`
 2. run the ros node `$ rosrun robot_motion_ctrl turtle_ctrl.py`  
   
   
-# Note:  
+  
+  
+# Notes:  
   
 ## Install ROS Noetic  
 Follow the [Ubuntu install of ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu) on the ROS wiki if you are using Ubuntu. For other OS you can also find the corresponding installation guide on ROS wiki.  
