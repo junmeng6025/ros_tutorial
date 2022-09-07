@@ -3,18 +3,18 @@ Followed the videos on the YouTube channel [ROS Tutorials - ROS Noetic For Begin
 Our package is named as `robot_motion_ctrl`.  
   
 # Run the demo  
-## *Before anything*  
+## *0) Before anything*  
 source the `/devel/setup.bash`  
 run `$ roscore`  
 run a turtlrsim node to visualize the turtle `$ rosrun turtlesim turtlesim_node`  
   
-## **Publisher:** make the turtle to draw a circle  
+## **1) Publisher:** make the turtle to draw a circle  
 1. run a turtlesim node:  
 `$ rosrun turtlesim turtlesim_node`  
 2. run a publisher to give the msg `/turtle1/cmd_vel` to the turtle:  
 `$ rosrun robot_motion_ctrl pub_draw_circle.py`  
   
-## **Subscriber:** show the pose information of the turtle  
+## **2) Subscriber:** show the pose information of the turtle  
 1. run a turtlrsim node:  
 `$ rosrun turtlesim turtlesim_node`  
 2. run the subscriber to get the msg `/turtle1/pose`:  
@@ -23,7 +23,7 @@ run a turtlrsim node to visualize the turtle `$ rosrun turtlesim turtlesim_node`
 keyboard cmd: `$ rosrun turtlesim turtle_teleop_key`  
 or draw circle: `$ rosrun robot_motion_ctrl pub_draw_circle.py`  
   
-## **Pub+Sub and Service:**  
+## **3) Pub+Sub and Service:**  
 **make the turtle cruise within an area, and change the pen color using ros service when crossing the middle.**  
 1. run a turtlrsim node:  
 `$ rosrun turtlesim turtlesim_node`  
