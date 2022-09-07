@@ -119,11 +119,13 @@ name:'turtle2'"
 ```  
 get a message in the terminal: `name: "turtle2"`, means that the new turtle is created successfully.  
 ### -8 Record and play a rosbag  
-record:  
+**record a rosbag:**  
 ```bash
-$ rosbag record -a-O cmd_record
-```
-play:  
+$ rosbag record -a -O cmd_record
+```  
+the command stream would be saved as `cmd_record.bag`.  
+  
+**play a rosbag:**  
 ```bash
 $ rosbag play cmd_record.bag
 ```
