@@ -55,20 +55,20 @@ $ rosrun robot_motion_ctrl turtle_ctrl.py
     
   
 # Common-used ROS commands  
-### 7.1 Check the compute graph:  
+### -1 Check the compute graph:  
 ```bash
 $ rqt_graph
 ```  
-### 7.2 Check the active topics:  
+### -2 Check the active topics:  
 ```bash
 $ rostopic list
 ```
-### 7.3 Check the properties of rosnode:  
+### -3 Check the properties of rosnode:  
 ```bash
 $ rosnode info /turtlesim
 ```  
 you will get information about what this node publishes and subscribes.  
-### 7.4 Publish message to a topic:  
+### -4 Publish message to a topic:  
 by default (hit the tab-key twice to fill automatically):    
 ```bash
 $ rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
@@ -91,10 +91,14 @@ angular:
   y: 0.0
   z: 0.0"
 ```  
-### 7.5 Check the properties (i.e. the structure) of a ros message:  
+### -5 Check the properties (i.e. the structure) of a ros message:  
 ```bash
 $ rosmsg show geometry_msgs/Twist
 ```  
+### -6 Check the active ros services:  
+```bash
+$ rosservice list
+```
   
 # Notes:  
   
