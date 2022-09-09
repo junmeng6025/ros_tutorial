@@ -25,7 +25,7 @@ run a keyboard control node
 $ rosrun turtlesim turtle_teleop_key
 ```  
   
-## **1) Publisher:** make the turtle to draw a circle  
+## **1) Publisher:** the turtle draws a circle  
 1. run a turtlesim node:  
 ```bash
 $ rosrun turtlesim turtlesim_node
@@ -35,7 +35,7 @@ $ rosrun turtlesim turtlesim_node
 $ rosrun robot_motion_ctrl pub_draw_circle.py
 ```  
   
-## **2) Subscriber:** show the pose information of the turtle  
+## **2) Subscriber:** plot the pose information of the turtle in the terminal  
 1. run a turtlrsim node:  
 ```bash
 $ rosrun turtlesim turtlesim_node
@@ -54,7 +54,7 @@ $ rosrun robot_motion_ctrl pub_draw_circle.py
 ```  
   
 ## **3) Pub+Sub and Service:**  
-**make the turtle cruise within an area, and change the pen color using ros service when crossing the middle.**  
+**make the turtle to cruise within an area, and change the pen color using ros service when crossing the middle.**  
 1. run a turtlrsim node:  
 ```bash
 $ rosrun turtlesim turtlesim_node
@@ -132,6 +132,7 @@ $ rosbag play cmd_record.bag
 ```  
 the turtle will start to move from the current position according to what was recorded.  
   
+  
 # Notes:  
   
 ## Install ROS Noetic  
@@ -143,8 +144,32 @@ Tips: there is also a convienent way that can install ROS with a [one-line comma
 First create a project folder to contain all the data as well as the code you would need.  
 Under the Project folder, create a folder as **ROS workspace**, e.g. `catkin_ws`, and then under `catkin_ws` create a blank folder `src` to contain the executable code scripts.  
   
+**create and initialize a workspace**  
+```bash
+$ mkdir -p~/catkin_ws/src  
+$ cd ~/catkin_ws/src  
+$ catkin_init_workspace  
+```  
+**compile the workspace**  
+```bash
+$ cd ~/catkin_ws/  
+$ catkin build  
+```  
+**set the env-variable**  
+```bash
+$ source devel/setup.bash
+```  
+** check the env-variable**  
+```bash
+$ echo $ROS_PACKAGE_PATH
+```
+  
 #### 0.2 Create ROS packages  
-cd to `catkin_ws/src/` and run `$ catkin_create_pkg robot_motion_ctrl rospy turtlesim` to create a ROS package named `robot_motion_ctrl`, with the dependencies of `rospy` and a ROS built-in tutorial project `turtlesim`.  
+cd to `catkin_ws/src/` and run  
+```bash
+$ catkin_create_pkg robot_motion_ctrl rospy turtlesim
+```  
+to create a ROS package named `robot_motion_ctrl`, with the dependencies of `rospy` and a ROS built-in tutorial project `turtlesim`.  
 Each ROS packages can be seen as a sub-APP of the whole APP, which covers certain functionalities.  
   
 #### 0.3 Build the ROS project
