@@ -159,10 +159,11 @@ $ catkin build
 ```bash
 $ source devel/setup.bash
 ```  
-** check the env-variable**  
+**check the env-variable**  
 ```bash
 $ echo $ROS_PACKAGE_PATH
 ```
+  
   
 #### 0.2 Create ROS packages  
 cd to `catkin_ws/src/` and run  
