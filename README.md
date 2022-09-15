@@ -1,5 +1,5 @@
 # ROS tutorial for beginers  
-Followed the videos on the YouTube channel [ROS Tutorials - ROS Noetic For Beginners](https://www.youtube.com/playlist?list=PLLSegLrePWgIbIrA4iehUQ-impvIXdd9Q)  
+Followed the videos on the YouTube channel [ROS Tutorials - ROS Noetic For Beginners](https://www.youtube.com/playlist?list=PLLSegLrePWgIbIrA4iehUQ-impvIXdd9Q) and Bilibili channel (in Chinese) [【古月居】古月·ROS入门21讲 | 一学就会的ROS机器人入门教程-哔哩哔哩】](https://b23.tv/0jDB8G2).  
 Our package is named as `robot_motion_ctrl`.  
   
 # Run the demo  
@@ -197,7 +197,11 @@ Tips:
 #### 0.3 Build the ROS project
 cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communications.  
   
-## 1) Write your first node  
+## 1) Write your first node: a publisher  
+In this Tutorial we learn to write the node in both Python and C++.  
+*Here we created the package named `learning_topic` instead of `robot_motion_ctrl` above.*  
+Under the package folder `/learning_topic` we have the folder `/scripts` containing the .py scripts and the folder `/src` containing .cpp scripts.  
+  
 ### C++:  
 **Write the node:**  
 ```bash
@@ -206,23 +210,49 @@ $ touch velocity_publisher.cpp
 $ code .
 ```  
 And write your code using VSCode.  
-**Create .exe file:**  
+**Generate the .exe file:**  
 With the finished .cpp file, we need to make it as an executable file and link the required libs.  
 Go to `catkin_ws/src/learning_topic` and edit the `CMakeLists.txt`, add these two lines under the tag `### Build ###`:  
-`add_executable(velocity_publisher src/velocity_publisher.cpp)`  
-`target_link_libraries(velocity_publisher ${catkin_LIBRARIES})`  
+`add_executable(velocity_publisher src/velocity_publisher.cpp)` -> creates an executable file out of the .cpp script, saved in `~/catkin_ws/devel/lib/<pkg_name>/`.  
+`target_link_libraries(velocity_publisher ${catkin_LIBRARIES})` -> links the required libs.  
   
 **Compile and run the Publisher:**  
 ```bash
 $ cd ~/catkin_ws
 $ catkin_make
 $ source devel/setup.bash
-$ roscore
-$ rosrun turtlesim_node
-$ rosrun learning_topic velocity_publisher
-```
+$ roscore                                     # in Sub-Terminal A
+$ rosrun turtlesim_node                       # in Sub-Terminal B
+$ rosrun learning_topic velocity_publisher    # in Sub-Terminal C
+```  
+Tips:  
+Every time we have modified the .cpp scripts we need to rerun `catkin_make` to update the .exe file.
+For Python we don't need rerun the `catkin_make` after modifying the scripts, because the exe file is exactlly the .py file, which was converted by the command `$ chmod +x node.py`.  
   
 ### Python:  
+**Write the node:**  
+```bash
+$ cd catkin_ws/src/learning_topic/scripts/
+$ touch velocity_publisher.py
+$ code .
+```  
+And write your code using VSCode.  
+**Generate the .exe file:**  
+```bash
+$ cd catkin_ws/src/learning_topic/scripts/
+$ chmod +x velocity_publisher.py
+```  
+  
+**Compile and run the Publisher:**  
+```bash
+$ cd ~/catkin_ws
+$ catkin_make
+$ source devel/setup.bash
+$ roscore                                       # in Sub-Terminal A
+$ rosrun turtlesim_node                         # in Sub-Terminal B
+$ rosrun learning_topic velocity_publisher.py   # in Sub-Terminal C
+```  
+For the Python scripts we DO NOT need to rebuild after modifying the code.  
   
 ## 2) Write a publisher  
   
