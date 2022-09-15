@@ -273,7 +273,20 @@ For the Python scripts we DO NOT need to rebuild after modifying the code.
 ## 2) Write a subscriber  
   
 ## 3) Customize a message type 自定义消息类型  
- 
+定义一个 `Person` 消息类型来记录一个人的信息。  
+### Define a .msg file  
+### Add dependencies in `package.xml`  
+```
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+```
+### Add compile options in `CMakeLists.txt`  
+- find_package(... message_generation)  
+- add_message_files(FILES Person.msg)  
+- generate_messages(DEPENDENCIES std_msgs)  
+- catkin_package(... message_runtime)  
+  
+### Compile and generate the language-related files  
   
 ## 4) Write a node that contains both publisher and subscriber  
 
