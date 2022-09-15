@@ -269,6 +269,7 @@ For the Python scripts we DO NOT need to rebuild after modifying the code.
 ## 2) Write a subscriber  
   
 ## 3) Customize a message type  
+自定义消息类型  
   
 ## 4) Write a node that contains both publisher and subscriber  
 
