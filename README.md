@@ -214,8 +214,14 @@ And write your code using VSCode.
 **Generate the .exe file:**  
 With the finished .cpp file, we need to make it as an executable file and link the required libs.  
 Go to `catkin_ws/src/learning_topic` and edit the `CMakeLists.txt`, add these two lines under the tag `### Build ###`:  
-`add_executable(velocity_publisher src/velocity_publisher.cpp)` -> creates an executable file out of the .cpp script, saved in `~/catkin_ws/devel/lib/<pkg_name>/`.  
-`target_link_libraries(velocity_publisher ${catkin_LIBRARIES})` -> links the required libs.  
+```text
+add_executable(velocity_publisher src/velocity_publisher.cpp)
+```
+-> creates an executable file out of the .cpp script, saved in `~/catkin_ws/devel/lib/<pkg_name>/`.  
+```text
+target_link_libraries(velocity_publisher ${catkin_LIBRARIES})
+```
+-> links the required libs.  
   
 **Compile and run the Publisher:**  
 ```bash
