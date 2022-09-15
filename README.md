@@ -289,6 +289,7 @@ For the Python scripts we DO NOT need to rebuild after modifying the code.
 - catkin_package(... message_runtime)  
   
 ### 3.4) Compile and generate the language-related files  
+This would generate `Person.h` in `/devel/include/<pkg_name>/`  
   
 ## 4) Write a node that contains both publisher and subscriber  
 
