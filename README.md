@@ -248,7 +248,7 @@ $ touch velocity_publisher.py
 $ code .
 ```  
 And write your code using VSCode.  
-Please note that we need to write  
+ALWAYS write  
 ```
 #!/use/bin/env python3
 ```
