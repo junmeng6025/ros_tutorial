@@ -317,3 +317,5 @@ $ rosrun learning_topic person_publisher    # in sub-window C
   
 ## 6) Write a node that calls ROS service  
   
+## 7) Client  
+  
