@@ -291,6 +291,13 @@ For the Python scripts we DO NOT need to rebuild after modifying the code.
 ### 3.4) Compile and generate the language-related files  
 This would generate `Person.h` in `/devel/include/<pkg_name>/`  
   
+### 3.5) Modify the `CMakeLists.txt`  
+Add  
+- add_executable(person_publisher src/person_publisher.cpp  
+- target_link_libraries(person_publisher ${catkin_LIBRARIES})  
+- add_dependencies(person_publisher ${PROJECT_NAME}_generate_messages_cpp)  
+below ## Build ## tag, and also for `person_subscriber`  
+  
 ## 4) Write a node that contains both publisher and subscriber  
 
 ## 5) About ROS service  
