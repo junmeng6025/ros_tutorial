@@ -158,12 +158,13 @@ the command `$ catkin_init_workspace` would create a cmake symlink of our worksp
 $ cd ~/catkin_ws/  
 $ catkin build  
 ```  
-Previously we also used the command  
+**Hint:** There's another command to compile the ROS workspace:    
 ```bash
 $ catkin_make
 ```  
-to compile the workspace.  
-TODO: Find out the differences between `$ catkin build` and `$ catkin_make`.  
+**ATTENTION**  
+`catkin_make` and `catkin build` are of different mechanism. Make sure build a workspace with ONLY one of them all the way, rather than combine them at the same time.  
+Check out the differences between `$ catkin build` and `$ catkin_make`, see [this](https://robotics.stackexchange.com/questions/16604/ros-catkin-make-vs-catkin-build).  
   
 **set the env-variable**  
 ```bash
@@ -268,8 +269,8 @@ For the Python scripts we DO NOT need to rebuild after modifying the code.
   
 ## 2) Write a subscriber  
   
-## 3) Customize a message type  
-自定义消息类型  
+## 3) Customize a message type 自定义消息类型  
+ 
   
 ## 4) Write a node that contains both publisher and subscriber  
 
