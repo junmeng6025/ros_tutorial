@@ -235,7 +235,10 @@ $ rosrun learning_topic velocity_publisher    # in Sub-Terminal C
 ```  
 Tips:  
 Every time we have modified the .cpp scripts we need to rerun `catkin_make` to update the .exe file.
-For Python we don't need rerun the `catkin_make` after modifying the scripts, because the exe file is exactlly the .py file, which was converted by the command `$ chmod +x node.py`.  
+For Python we don't need rerun the `catkin_make` after modifying the scripts, because the exe file is exactlly the .py file, which was converted by the command  
+```bash
+$ chmod +x node.py
+```  
   
 ### Python:  
 **Write the node:**  
