@@ -244,6 +244,11 @@ $ touch velocity_publisher.py
 $ code .
 ```  
 And write your code using VSCode.  
+Please note that we need to write  
+```
+#!/use/bin/env python3
+```
+at the very begining of the .py script to make sure that it could be compiled by ROS successfully.  
 **Generate the .exe file:**  
 ```bash
 $ cd catkin_ws/src/learning_topic/scripts/
