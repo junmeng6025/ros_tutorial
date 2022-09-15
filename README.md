@@ -266,9 +266,9 @@ $ rosrun learning_topic velocity_publisher.py   # in Sub-Terminal C
 ```  
 For the Python scripts we DO NOT need to rebuild after modifying the code.  
   
-## 2) Write a publisher  
+## 2) Write a subscriber  
   
-## 3) Write a subscriber  
+## 3) Customize a message type  
   
 ## 4) Write a node that contains both publisher and subscriber  
 
