@@ -166,6 +166,10 @@ $ echo $ROS_PACKAGE_PATH
   
   
 #### 0.2 Create ROS packages  
+The syntax is  
+`
+$ catkin_create_pkg <pkg_name> [depend1] [depend2] [depend3]
+`  
 cd to `catkin_ws/src/` and run  
 ```bash
 $ catkin_create_pkg robot_motion_ctrl rospy turtlesim
