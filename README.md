@@ -198,6 +198,31 @@ Tips:
 cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communications.  
   
 ## 1) Write your first node  
+### C++:  
+**Write the node:**  
+```bash
+$ cd catkin_ws/src/learning_topic/src/
+$ touch velocity_publisher.cpp
+$ code .
+```  
+And write your code using VSCode.  
+**Create .exe file:**  
+With the finished .cpp file, we need to make it as an executable file and link the required libs.  
+Go to `catkin_ws/src/learning_topic` and edit the `CMakeLists.txt`, add these two lines undet the tag `### Build ###`:  
+`add_executable(velocity_publisher src/velocity_publisher.cpp)`  
+`target_link_libraries(velocity_publisher ${catkin_LIBRARIES})`  
+  
+**Compile and run the Publisher:**  
+```bash
+$ cd ~/catkin_ws
+$ catkin_make
+$ source devel/setup.bash
+$ roscore
+$ rosrun turtlesim_node
+$ rosrun learning_topic velocity_publisher
+```
+  
+### Python:  
   
 ## 2) Write a publisher  
   
