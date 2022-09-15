@@ -280,12 +280,12 @@ For the Python scripts we DO NOT need to rebuild after modifying the code.
 - <exec_depend>message_runtime</exec_depend>  
   
 ### 3.3) Add compile options in `CMakeLists.txt`  
-- **In bracket find_package()**
+- **In bracket find_package()**  
   find_package(... message_generation)  
-- **Under ## Declare ROS messages, services and actions ##**
+- **Under ## Declare ROS messages, services and actions ##**  
   add_message_files(FILES Person.msg)  
   generate_messages(DEPENDENCIES std_msgs)  
-- **In bracket catkin_package()**
+- **In bracket catkin_package()**  
   catkin_package(... message_runtime)  
   
 ### 3.4) Compile and generate the language-related files  
