@@ -140,7 +140,7 @@ Follow the [Ubuntu install of ROS Noetic](http://wiki.ros.org/noetic/Installatio
 Tips: there is also a convienent way that can install ROS with a [one-line command](http://wiki.ros.org/ROS/Installation/TwoLineInstall/).  
   
 ## 0) Create a workspace and initialize everything  
-#### 0.1 Create folders
+#### 0.1 Create the workspace
 First create a project folder to contain all the data as well as the code you would need.  
 Under the Project folder, create a folder as **ROS workspace**, e.g. `catkin_ws`, and then under `catkin_ws` create a blank folder `src` to contain the executable code scripts.  
   
@@ -150,11 +150,20 @@ $ mkdir -p~/catkin_ws/src
 $ cd ~/catkin_ws/src  
 $ catkin_init_workspace  
 ```  
+the command `$ catkin_init_workspace` would create a cmake symlink of our workspace to the root ROS-cmake in our OS.  
+  
 **compile the workspace**  
 ```bash
 $ cd ~/catkin_ws/  
 $ catkin build  
 ```  
+Previously we also used the command  
+```bash
+$ catkin_make
+```  
+to compile the workspace.  
+TODO: Find out the differences between `$ catkin build` and `$ catkin_make`.  
+  
 **set the env-variable**  
 ```bash
 $ source devel/setup.bash
@@ -162,20 +171,28 @@ $ source devel/setup.bash
 **check the env-variable**  
 ```bash
 $ echo $ROS_PACKAGE_PATH
-```
+```  
+This would return ALL the registered ROS package paths.  
   
   
 #### 0.2 Create ROS packages  
-The syntax is  
-`
-$ catkin_create_pkg <pkg_name> [depend1] [depend2] [depend3]
-`  
 cd to `catkin_ws/src/` and run  
 ```bash
 $ catkin_create_pkg robot_motion_ctrl rospy turtlesim
 ```  
+The syntax is  
+`
+$ catkin_create_pkg <pkg_name> [depend1] [depend2] [depend3] [depend...]
+`  
 to create a ROS package named `robot_motion_ctrl`, with the dependencies of `rospy` and a ROS built-in tutorial project `turtlesim`.  
 Each ROS packages can be seen as a sub-APP of the whole APP, which covers certain functionalities.  
+  
+The ros package would contain two special files: `CMakeLists.txt` and `package.xml`, which determine that this folder has the ROS-package property.  
+Besides, the package folder would also contain an `src` folder.  
+  
+Tips:
+1. There COULD NOT be packages of the same name under one workspace.  
+2. In different workspaces there COULD be packages of the same name.  
   
 #### 0.3 Build the ROS project
 cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communications.  
