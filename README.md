@@ -208,7 +208,7 @@ $ code .
 And write your code using VSCode.  
 **Create .exe file:**  
 With the finished .cpp file, we need to make it as an executable file and link the required libs.  
-Go to `catkin_ws/src/learning_topic` and edit the `CMakeLists.txt`, add these two lines undet the tag `### Build ###`:  
+Go to `catkin_ws/src/learning_topic` and edit the `CMakeLists.txt`, add these two lines under the tag `### Build ###`:  
 `add_executable(velocity_publisher src/velocity_publisher.cpp)`  
 `target_link_libraries(velocity_publisher ${catkin_LIBRARIES})`  
   
