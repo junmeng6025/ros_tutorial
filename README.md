@@ -199,6 +199,7 @@ Tips:
 #### 0.3 Build the ROS project
 cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communications.  
   
+# Learning Topic   
 ## 1) Write your first node: a publisher  
 In this Tutorial we will get familiar with the `topic` mechanism. We will learn to write the node in both Python and C++.  
 *Here we created the package named `learning_topic` instead of `robot_motion_ctrl` above.*  
@@ -317,27 +318,30 @@ $ rosrun learning_topic person_publisher    # in sub-window C
   
 ## 6) Write a node that calls ROS service  
   
-## 7) Client  
+# Learning Service  
 In this Tutorial we will get familiar with the `service` mechanism. We will learn to write the node in both Python and C++.  
-With the service mechanism we will try to add another turtle into the turtlesim.  
+
+## 7) Client  
+With the service mechanism we will try to add another turtle into the turtlesim:  
+- **Request a srv named `/spawn`, of type `turtlesim::Spawn`**  
 ### 7.1) Create new package `learning_service`  
 ```bash
 $ cd ~/catkin_ws
 $ catkin_create_pkg learning_service roscpp rospy std_msgs geometry_msgs turtlesim
 ```  
 ### 7.2) Write the Client  
-**C++**  
+- **C++**  
 Don't forget to add the lines below into the `CMakeLists.txt` to generate exe file.  
 ```
 add_executable(turtle_spawn src/turtle_spawn.cpp)
 target_link_libraries(turtle_spawn ${catkin_LIBRARIES})
 ```  
-**Python**  
+- **Python**  
 Don't forget to set the property of .py script as exe.
 ```bash
 $ chmod +x turtle_spawn.py
 ```
-
+  
 ### 7.3) Compile and run  
 ```bash
 $ cd ~/catkin_ws
@@ -348,3 +352,6 @@ $ rosrun turtlesim turtlesim_node
 $ rosrun learning_service turtle_spawn      # exe from .cpp
 $ rosrun learning_service turtle_spawn.py   # exe from .py
 ```
+## 8) Write a Server  
+With the service mechanism we will try to drive the turtle to move:  
+- **Request a srv named `/turtle_command`, of type `std_srvs::Trigger`**  
