@@ -1,9 +1,9 @@
 # ROS tutorial for beginers  
 Followed the videos on the YouTube channel [ROS Tutorials - ROS Noetic For Beginners](https://www.youtube.com/playlist?list=PLLSegLrePWgIbIrA4iehUQ-impvIXdd9Q)  
 and Bilibili channel (in Chinese) [【古月居】古月·ROS入门21讲 | 一学就会的ROS机器人入门教程-哔哩哔哩】](https://b23.tv/0jDB8G2).  
-Our package is named as `robot_motion_ctrl`.  
   
 # Run the demo  
+Our package is named as `robot_motion_ctrl`.  
 ## *0) Before anything*  
 cd to the `catkin_ws`, source the `/devel/setup.bash`:
 ```bash
