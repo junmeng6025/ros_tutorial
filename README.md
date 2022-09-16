@@ -320,7 +320,7 @@ $ rosrun learning_topic person_publisher    # in sub-window C
 ## 7) Client  
 In this Tutorial we will get familiar with the `service` mechanism. We will learn to write the node in both Python and C++.  
 With the service mechanism we will try to add another turtle into the turtlesim.  
-**Create new package `learning_service`**  
+### 7.1) Create new package `learning_service`  
 ```bash
 $ cd ~/catkin_ws
 $ catkin_create_pkg learning_service roscpp rospy std_msgs geometry_msgs turtlesim
