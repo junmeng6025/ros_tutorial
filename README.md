@@ -325,4 +325,25 @@ With the service mechanism we will try to add another turtle into the turtlesim.
 $ cd ~/catkin_ws
 $ catkin_create_pkg learning_service roscpp rospy std_msgs geometry_msgs turtlesim
 ```  
+### 7.2) Write the Client  
+**C++**  
+Don't forget to add the lines below into the `CMakeLists.txt` to generate exe file.  
+```
+add_executable(turtle_spawn src/turtle_spawn.cpp)
+target_link_libraries(turtle_spawn ${catkin_LIBRARIES})
+```  
+**Python**  
+Don't forget to set the property of .py script as exe.
+```bash
+$ chmod +x turtle_spawn.py
+```
 
+### 7.3) Compile and run  
+```bash
+$ cd ~/catkin_ws
+$ catkin_make
+$ source devel/setup.bash
+$ roscore
+$ rosrun turtlesim turtlesim_node
+$ rosrun learning_service turtle_spawn
+```
