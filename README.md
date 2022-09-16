@@ -345,5 +345,6 @@ $ catkin_make
 $ source devel/setup.bash
 $ roscore
 $ rosrun turtlesim turtlesim_node
-$ rosrun learning_service turtle_spawn
+$ rosrun learning_service turtle_spawn      # exe from .cpp
+$ rosrun learning_service turtle_spawn.py   # exe from .py
 ```
