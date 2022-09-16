@@ -200,7 +200,7 @@ Tips:
 cd back to `catkin_ws`, run `$ catkin build` to generalize files for ROS communications.  
   
 ## 1) Write your first node: a publisher  
-In this Tutorial we learn to write the node in both Python and C++.  
+In this Tutorial we will get familiar with the `topic` mechanism. We will learn to write the node in both Python and C++.  
 *Here we created the package named `learning_topic` instead of `robot_motion_ctrl` above.*  
 Under the package folder `/learning_topic` we have the folder `/scripts` containing the .py scripts and the folder `/src` containing .cpp scripts.  
   
@@ -318,4 +318,11 @@ $ rosrun learning_topic person_publisher    # in sub-window C
 ## 6) Write a node that calls ROS service  
   
 ## 7) Client  
-  
+In this Tutorial we will get familiar with the `service` mechanism. We will learn to write the node in both Python and C++.  
+With the service mechanism we will try to add another turtle into the turtlesim.  
+**Create new package `learning_service`**  
+```bash
+$ cd ~/catkin_ws
+$ catkin_create_pkg learning_service roscpp rospy std_msgs geometry_msgs turtlesim
+```  
+
