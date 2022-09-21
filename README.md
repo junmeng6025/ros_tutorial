@@ -298,7 +298,7 @@ uint8 female  = 2
   add_message_files(FILES Person.msg)  
   generate_messages(DEPENDENCIES std_msgs)  
 - **In bracket catkin_package()**  
-  catkin_package(... message_runtime)  
+  catkin_package(CATKIN_DEPENDS... message_runtime)  
   
 ### 3.4) Compile and generate the language-related files  
 This would generate `Person.h` in `/devel/include/<pkg_name>/`  
@@ -421,7 +421,7 @@ Res
 - find_package(... message_generation)  
 - add_service_files(FILES Person.srv)  
 generate_messages(DEPENDENCIES std_msgs)  
-- catkin_package(... message_runtime)
+- catkin_package(CATKIN_DEPENDS... message_runtime)
   
 ## 9.4) Compile to generate all the relevant files  
   
