@@ -321,7 +321,7 @@ $ rosrun learning_topic person_publisher    # in sub-window C
 # Learning Service  
 In this Tutorial we will get familiar with the `service` mechanism. We will learn to write the node in both Python and C++. We create a new package named `learning_service`.  
   
-## 7) Client  
+## 7) Write a Client  
 With the service mechanism we will try to  
 - add another turtle into the turtlesim:  
 - **Request a srv named `/spawn`, of type `turtlesim::Spawn`**  
@@ -357,3 +357,14 @@ $ rosrun learning_service turtle_spawn.py   # exe from .py
 With the service mechanism we will try to  
 - switch the turtle to move or stay:  
 - **Request a srv named `/turtle_command`, of type `std_srvs::Trigger`**  
+We skip the similar steps. As for compiling, for C++ don't forget to add the lines in CMakeKists.txt, for Python don't forget to chmod.  
+### Compile and run  
+```bash
+$ cd ~/catkin_ws
+$ catkin_make
+$ source devel/setup.bash
+$ roscore
+$ rosrun turtlesim turtlesim_node
+$ rosrun learning_service turtle_command_server
+$ rosservice call /turtle_command"{}"
+```  
