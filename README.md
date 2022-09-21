@@ -462,5 +462,8 @@ $ roscore
 $ rosrun learning_service person_server
 $ rosrun learning_service person_client
 ```
-
+**Run the Server first:**  
+The Server waits for the Client's request.  
+**Run the Client first:**  
+The Client would hang om, waiting for the Server to be launched.    
   
