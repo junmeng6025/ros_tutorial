@@ -301,7 +301,7 @@ uint8 female  = 2
   catkin_package(CATKIN_DEPENDS... message_runtime)  
   
 ### 3.4) Compile and generate the language-related files  
-This would generate `Person.h` in `/devel/include/<pkg_name>/`  
+This would generate `Person.h` in `/devel/include/<pkg_name=learning_topic>/`  
   
 ### 3.5) Write the `person_publisher.cpp` and the `peraon_subscriber.cpp`  
   
@@ -424,5 +424,6 @@ generate_messages(DEPENDENCIES std_msgs)
 - catkin_package(CATKIN_DEPENDS... message_runtime)
   
 ## 9.4) Compile to generate all the relevant files  
+This would generate `Person.h`, `PersonRequest.h` and `PersonResponse.h` in `/devel/include/<pkg_name=learning_service>/`  
   
   
