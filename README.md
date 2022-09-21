@@ -405,6 +405,13 @@ uint8 female  = 2
 ---
 string result
 ```  
+Where above the `---` is the Request and below `---` is the Response.  
+```
+# .srv
+Req
+---
+Res
+```
 ## 9.2) Add the functional package dependence in `package.xml`  
 ```
 <build_depend>message_generation</build_depend>
