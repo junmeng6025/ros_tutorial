@@ -275,8 +275,18 @@ For the Python scripts we DO NOT need to rebuild after modifying the code.
   
 ## 3) Customize a message type 自定义消息类型  
 Previously we have got familiar with the pre-defined ROS message types like `turtlesim::Pose`, `geometry_msgs::Twist`.  
-Now we try to define a new message type 'Person` basing on our demand to publish the information of a person.  
-### 3.1) Define a .msg file  
+Now we try to define a new message type `learning_topic::Person` basing on our demand to publish the information of a person.  
+### 3.1) Define a .msg file `Person.msg`  
+```
+# Person.msg
+string name
+uint8 sex
+uint8 age
+
+uint8 unknown = 0
+uint8 male    = 1
+uint8 female  = 2
+```
 ### 3.2) Add package dependencies in `package.xml`  
 - <build_depend>message_generation</build_depend>  
 - <exec_depend>message_runtime</exec_depend>  
@@ -381,4 +391,31 @@ $ rosservice call /turtle_command "{}"  # "{}" can be completed automatically by
   
 ## 9) Customize a Service type.
 In the Chapter 8) we have used a pre-defined Service type `std_srvs::Trigger`.  
-Now We try to define a service type basing on our demands.  
+Now We try to define a service type `learning_service::Person` basing on our demands.  
+### 9.1) Define a .srv file `Person.srv`  
+```
+# Person.srv
+string name
+uint8 sex
+uint8 age
+
+uint8 unknown = 0
+uint8 male    = 1
+uint8 female  = 2
+---
+string result
+```  
+## 9.2) Add the functional package dependence in `package.xml`  
+```
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+```
+## 9.3) Add the compiling options in `CMakeLists.txt`  
+- find_package(... message_generation)  
+- add_service_files(FILES Person.srv)  
+generate_messages(DEPENDENCIES std_msgs)  
+- catkin_package(... message_runtime)
+  
+## 9.4) Compile to generate all the relevant files  
+  
+  
