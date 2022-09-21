@@ -354,5 +354,6 @@ $ rosrun learning_service turtle_spawn      # exe from .cpp
 $ rosrun learning_service turtle_spawn.py   # exe from .py
 ```
 ## 8) Write a Server  
-With the service mechanism we will try to drive the turtle to move:  
+With the service mechanism we will try to  
+- switch the turtle to move or stay:  
 - **Request a srv named `/turtle_command`, of type `std_srvs::Trigger`**  
