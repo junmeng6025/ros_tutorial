@@ -453,4 +453,14 @@ target_link_libraries(person_client ${catkin_LIBRARIES})
 add_dependencies(person_client ${PROJECT_NAME}_gencpp)
 ```
   
+### 9.7) Compile and run
+```bash
+$ cd ~/catkin_ws
+$ catkin_make
+$ source devel/setup.bash
+$ roscore
+$ rosrun learning_service person_server
+$ rosrun learning_service person_client
+```
+
   
