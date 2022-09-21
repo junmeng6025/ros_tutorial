@@ -357,6 +357,7 @@ $ rosrun learning_service turtle_spawn.py   # exe from .py
 With the service mechanism we will try to  
 - switch the turtle to move or stay:  
 - **Request a srv named `/turtle_command`, of type `std_srvs::Trigger`**  
+  
 We skip the similar steps. As for compiling, for C++ don't forget to add the lines in CMakeKists.txt, for Python don't forget to chmod.  
 ### Compile and run  
 ```bash
