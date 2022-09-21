@@ -305,7 +305,7 @@ This would generate `Person.h` in `/devel/include/<pkg_name=learning_topic>/`
   
 ### 3.5) Write the `person_publisher.cpp` and the `peraon_subscriber.cpp`  
   
-### 3.6) Modify the `CMakeLists.txt`  
+### 3.6) Configure the `CMakeLists.txt`  
 Add  
 - add_executable(person_publisher src/person_publisher.cpp  
 - target_link_libraries(person_publisher ${catkin_LIBRARIES})  
@@ -342,6 +342,17 @@ $ cd ~/catkin_ws
 $ catkin_create_pkg learning_service roscpp rospy std_msgs geometry_msgs turtlesim
 ```  
 ### 7.2) Write the Client  
+The basic pipeline for a ROS-Client is:  
+- Initialize a ROS node;  
+- Create a Client object;  
+```
+ros::service::waitForService("/spawn");  // LOOP BLOCKING
+ros::ServiceClient add_turtle = node.serviceClient<turtlesim::Spawn>("/spawn");
+```  
+- Request to call a service;  
+- Wait for the result of the Server's response.  
+  
+**Before catkin_make:**    
 - **C++**  
 Don't forget to add the lines below into the `CMakeLists.txt` to generate exe file.  
 ```
@@ -369,7 +380,7 @@ With the service mechanism we will try to
 - switch the turtle to move or stay:  
 - **Request a srv named `/turtle_command`, of type `std_srvs::Trigger`**  
   
-The basic pipeline for a ROS server is:  
+The basic pipeline for defining a ROS-Server is:  
 - Initialize a ROS node;  
 - Create a Server object;  
 - Wait for a service request. Get into the Callback() when getting request;  
@@ -412,18 +423,34 @@ Req
 ---
 Res
 ```
-## 9.2) Add the functional package dependence in `package.xml`  
+### 9.2) Add the functional package dependence in `package.xml`  
 ```
 <build_depend>message_generation</build_depend>
 <exec_depend>message_runtime</exec_depend>
 ```
-## 9.3) Add the compiling options in `CMakeLists.txt`  
+### 9.3) Add the compiling options in `CMakeLists.txt`  
 - find_package(... message_generation)  
 - add_service_files(FILES Person.srv)  
 generate_messages(DEPENDENCIES std_msgs)  
 - catkin_package(CATKIN_DEPENDS... message_runtime)
   
-## 9.4) Compile to generate all the relevant files  
+### 9.4) Compile to generate all the relevant files  
 This would generate `Person.h`, `PersonRequest.h` and `PersonResponse.h` in `/devel/include/<pkg_name=learning_service>/`  
+### 9.5) Write the Client and the Server  
+see pipelines in 7.2) for Client and in 8) for Server.  
+### 9.6) Configure the `CMakeLists.txt`  
+- `add_executable` set the to-be-compiled .cppcfile and the to-be-generated .exe file  
+- `target_link_libraries` set the link libs  
+- `add_dependencies` add the dependencies
+  
+```
+add_executable(person_server src/person_server.cpp)
+target_link_libraries(person_server ${catkin_LIBRARIES})
+add_dependencies(person_server ${PROJECT_NAME}_gencpp)
+
+add_executable(person_client src/person_client.cpp)
+target_link_libraries(person_client ${catkin_LIBRARIES})
+add_dependencies(person_client ${PROJECT_NAME}_gencpp)
+```
   
   
