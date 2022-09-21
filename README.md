@@ -274,7 +274,8 @@ For the Python scripts we DO NOT need to rebuild after modifying the code.
 ## 2) Write a subscriber  
   
 ## 3) Customize a message type 自定义消息类型  
-定义一个 `Person` 消息类型来记录一个人的信息。  
+Previously we have got familiar with the pre-defined ROS message types like `turtlesim::Pose`, `geometry_msgs::Twist`.  
+Now we try to define a new message type 'Person` basing on our demand to publish the information of a person.  
 ### 3.1) Define a .msg file  
 ### 3.2) Add package dependencies in `package.xml`  
 - <build_depend>message_generation</build_depend>  
@@ -377,3 +378,6 @@ $ rosrun learning_service turtle_command_server
 $ rosservice call /turtle_command "{}"  # "{}" can be completed automatically by hitting TAB twice
                                         # "{}" means this service does not need a request. 
 ```  
+  
+## 9) Customize a Service type.
+In the Chapter 8) we have used a pre-defined Service type `Trigger`. Now We try to define a service type basing on our demands.  
