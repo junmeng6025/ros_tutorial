@@ -358,6 +358,12 @@ With the service mechanism we will try to
 - switch the turtle to move or stay:  
 - **Request a srv named `/turtle_command`, of type `std_srvs::Trigger`**  
   
+The basic pipeline for a ROS server is:  
+- Initialize a ROS node;  
+- Create a Server object;  
+- Wait for a service request. Get into the Callback() when getting request;  
+- Implement the server functions in the Callback(), return the Response data.  
+  
 We skip the common steps mentioned before.  
 Just don't forget to add the lines in CMakeKists.txt for C++, and to chmod for Python before compiling and running.  
 ### Compile and run  
