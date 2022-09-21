@@ -380,4 +380,5 @@ $ rosservice call /turtle_command "{}"  # "{}" can be completed automatically by
 ```  
   
 ## 9) Customize a Service type.
-In the Chapter 8) we have used a pre-defined Service type `Trigger`. Now We try to define a service type basing on our demands.  
+In the Chapter 8) we have used a pre-defined Service type `std_srvs::Trigger`.  
+Now We try to define a service type basing on our demands.  
